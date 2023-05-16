@@ -26,7 +26,7 @@ The merge function takes two sorted lists as input and merges them into a single
 
 Overall, the approach effectively divides the list into smaller subproblems, sorts them individually, and then merges the sorted sublists to obtain the final sorted list.
 
-Code: [link to the code file](code.py)
+Code: [https://github.com/Ammar-Amjad/Leetcode/blob/main/148.%20Sort%20List/code.py](code.py)
 
 ## Complexity: time and space complexity
 The time complexity of the sortList function is O(n log n), 

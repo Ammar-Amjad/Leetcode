@@ -22,7 +22,7 @@ Constraints:
 ## Approach:
 The minKnightMoves function uses dynamic programming and recursion to find the minimum number of moves required for a knight to reach the target position (x, y) on a chessboard. It employs memoization with the lru_cache decorator to store previously calculated results. The base cases are when the knight is already at the target (x + y = 0) or one move away from the target (x + y = 2). Otherwise, it recursively calculates the minimum moves by considering two possible knight moves and choosing the minimum. The final result is returned as the minimum number of moves required.
 
-## Code: [link to the code file](code.py)
+## Code: [https://github.com/Ammar-Amjad/Leetcode/blob/main/1197.%20Minimum%20Knight%20Moves/code.py](code.py)
 
 ## Complexity: time and space complexity
 

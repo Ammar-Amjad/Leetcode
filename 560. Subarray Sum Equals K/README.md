@@ -23,7 +23,7 @@ For each number 'n' in the given list 'nums', the prefix sum 'prefixSum' is upda
 
 Finally, the frequency of the current prefix sum is updated in the 'count' hashmap. The 'answer' is returned, representing the total count of subarrays with a sum of 'k'.
 
-## Code: [link to the code file](code.py)
+## Code: [https://github.com/Ammar-Amjad/Leetcode/blob/main/560.%20Subarray%20Sum%20Equals%20K/code.py](code.py)
 
 ## Complexity: time and space complexity
 The time complexity of the given solution is O(n), 
