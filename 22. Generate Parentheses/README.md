@@ -12,7 +12,7 @@ Output: ["()"]
 Constraints:
 1 <= n <= 8
 
-## Approach:
+## Approach: Backtracking
 
 Code: [https://github.com/Ammar-Amjad/Leetcode/blob/main/Generate%20Parentheses/code.py](code.py)
 The code implements a recursive depth-first search (DFS) algorithm to generate all valid combinations of parentheses. It takes an integer n as input and returns a list of strings representing the valid combinations.
