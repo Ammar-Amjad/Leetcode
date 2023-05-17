@@ -1,4 +1,4 @@
-# Problem: 22. Generate Parentheses
+# Problem: 215. Kth Largest Element in an Array
 Given an integer array nums and an integer k, return the kth largest element in the array.
 
 Note that it is the kth largest element in the sorted order, not the kth distinct element.
@@ -19,7 +19,7 @@ Constraints:
 
 ## Approach: 
 
-Code: [https://github.com/Ammar-Amjad/Leetcode/blob/main/Generate%20Parentheses/code.py](code.py)
+Code: [https://github.com/Ammar-Amjad/Leetcode/tree/main/215.%20Kth%20Largest%20Element%20in%20an%20Arrayy/code.py](code.py)
 The provided code uses the QuickSelect algorithm to find the kth largest element in an array. It recursively partitions the array based on a pivot element until it finds the desired element. The function findKthLargest takes the input array and k, then calls the helper function select with appropriate initial arguments. The code efficiently determines the kth largest element by finding the (len(nums) - k)th smallest element in the array.
 
 ## Complexity: 

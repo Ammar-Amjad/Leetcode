@@ -48,7 +48,7 @@ Constraints:
 
 ## Approach: 
 
-Code: [https://github.com/Ammar-Amjad/Leetcode/blob/main/Generate%20Parentheses/code.py](code.py)
+Code: [https://github.com/Ammar-Amjad/Leetcode/blob/main/528.%20Random%20Pick%20with%20Weight/code.py](code.py)
 The given code defines a class Solution that implements the concept of weighted random selection. The constructor takes a list of integer weights and calculates the prefix sums of the weights. The pickIndex method selects an index randomly based on the weights. It generates a random target value between 0 and the total sum of weights. It then performs binary search on the prefix sums to find the index where the target falls within the cumulative sum range. The index is returned as the randomly selected weighted index.
 
 

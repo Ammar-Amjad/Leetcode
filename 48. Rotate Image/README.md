@@ -1,4 +1,4 @@
-# Problem: 22. Generate Parentheses
+# Problem: 48. Rotate Image
 You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
 
 You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation. 
@@ -19,7 +19,7 @@ Constraints:
 
 ## Approach: 
 
-Code: [https://github.com/Ammar-Amjad/Leetcode/blob/main/Generate%20Parentheses/code.py](code.py)
+Code: [https://github.com/Ammar-Amjad/Leetcode/tree/main/48.%20Rotate%20Image/code.py](code.py)
 The provided code implements a solution to rotate a square matrix in-place by 90 degrees clockwise. The approach involves two steps: transposing the matrix by swapping elements across its diagonal, and then reversing each row horizontally. These operations effectively rotate the matrix 90 degrees clockwise. The code defines two separate functions, "transpose_matrix" and "reverse," which are then called within the "rotate" method of the "Solution" class. The "rotate" method takes a matrix as input and modifies it in-place.
 
 ## Complexity: 

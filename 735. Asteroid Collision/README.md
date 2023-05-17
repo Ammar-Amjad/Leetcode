@@ -1,4 +1,4 @@
-# Problem: 22. Generate Parentheses
+# Problem: 735. Asteroid Collision
 We are given an array asteroids of integers representing asteroids in a row.
 
 For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left). Each asteroid moves at the same speed.
@@ -26,7 +26,6 @@ Constraints:
 - asteroids[i] != 0
 
 ## Approach: 
-Code: [https://github.com/Ammar-Amjad/Leetcode/blob/main/Generate%20Parentheses/code.py](code.py)
 The given code implements the "asteroidCollision" method in the "Solution" class. It takes a list of integers, "asteroids," as input. The code iterates through the elements of the "asteroids" list. It checks if the current element has a negative value and if the last element in the "ans" list is positive. If a collision occurs, the code compares the absolute values of the elements and determines the result accordingly. If there is no collision, the current element is appended to the "ans" list. Finally, the modified "ans" list is returned as the output.
 
 ## Complexity: 

@@ -1,4 +1,4 @@
-# Problem: 22. Generate Parentheses
+# Problem: 221. Maximal Square
 Given an m x n binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area. 
 
 Example 1:
@@ -21,7 +21,7 @@ Constraints:
 
 ## Approach: 
 
-Code: [https://github.com/Ammar-Amjad/Leetcode/blob/main/Generate%20Parentheses/code.py](code.py)
+Code: [https://github.com/Ammar-Amjad/Leetcode/tree/main/221.%20Maximal%20Square/code.py](code.py)
 The given code implements the maximalSquare function, which finds the maximum square of '1's in a given matrix.
 
 The approach is to use dynamic programming to build a 2D table (dp) that represents the maximum square size at each position in the matrix. The dp table is initialized with zeros.
