@@ -39,6 +39,6 @@ Please keep in mind that these solutions are meant to serve as a reference and l
 
 ## Acknowledgements
 
-I would like to express my gratitude to the LeetCode platform and the community for providing a vast collection of programming problems. Solving these problems has been a valuable learning experience, and I hope my solutions can be of help to others in their coding journey.
+I would like to express my gratitude to the LeetCode platform and the community for providing a vast collection of programming problems. Solving these problems has been a valuable learning experience, and I hope my solutions can be of help to others in their coding journey..
 
 Happy coding!
