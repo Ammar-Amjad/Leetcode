@@ -13,9 +13,8 @@ class Solution:
         while curr:
             if curr.val == val:
                 dummy.next = curr.next
-                curr = curr.next
             else:        
-                curr = curr.next
                 dummy = dummy.next
+            curr = curr.next
         
         return sentinel.next
