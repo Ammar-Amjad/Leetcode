@@ -4,6 +4,10 @@ class Solution:
         nlen = len(needle)
         
         for i in range(hlen - nlen + 1):
-            if haystack[i:i + nlen] == needle:
-                return i
+            for j in range(nlen):
+                if haystack[i + j] != needle[j]:
+                    break
+                if j == nlen - 1:
+                    return i
+
         return -1
