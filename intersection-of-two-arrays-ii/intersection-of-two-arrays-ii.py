@@ -1,25 +1,25 @@
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         
-        if len(nums2) < len(nums1):
-            return self.intersect(nums2, nums1)
-        
-        dic = {}
-        for i in range(len(nums1)):
-            if nums1[i] in dic:
-                dic[nums1[i]] += 1
-            else:
-                dic[nums1[i]] = 1
-         
+        nums1.sort()
+        nums2.sort()
+
+        i = 0
+        j = 0
+
         k = 0
-        for i in range(len(nums2)):
-            if nums2[i] in dic:
-                dic[nums2[i]] -= 1
-                nums1[k] = nums2[i]
+        while i < len(nums1) and j < len(nums2):
+            if nums1[i] == nums2[j]:
+                nums1[k] = nums1[i]
                 k += 1
-                if dic[nums2[i]] == 0:
-                    del dic[nums2[i]]
+                i += 1
+                j += 1
+            elif nums1[i] < nums2[j]:
+                i += 1
+            else:
+                j += 1
         return nums1[:k]
+        
         
         
         
