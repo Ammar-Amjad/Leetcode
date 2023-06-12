@@ -1,8 +1,10 @@
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
-         
-        dic = {}
         
+        if len(nums2) < len(nums1):
+            return self.intersect(nums2, nums1)
+        
+        dic = {}
         for i in range(len(nums1)):
             if nums1[i] in dic:
                 dic[nums1[i]] += 1
