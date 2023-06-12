@@ -8,15 +8,16 @@ class Solution:
                 dic[nums1[i]] += 1
             else:
                 dic[nums1[i]] = 1
-        res = []
-        
+         
+        k = 0
         for i in range(len(nums2)):
             if nums2[i] in dic:
                 dic[nums2[i]] -= 1
-                res.append(nums2[i])
+                nums1[k] = nums2[i]
+                k += 1
                 if dic[nums2[i]] == 0:
                     del dic[nums2[i]]
-        return res
+        return nums1[:k]
         
         
         
