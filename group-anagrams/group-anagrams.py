@@ -3,7 +3,7 @@ class Solution:
         dic = {}
         
         for s in strs:
-            ss = ''.join(sorted(s)) 
+            ss = tuple(sorted(s)) 
             if ss not in dic:
                 dic[ss] = [s]
             else:
