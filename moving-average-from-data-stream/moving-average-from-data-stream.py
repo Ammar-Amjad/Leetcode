@@ -2,7 +2,6 @@ class MovingAverage:
 
     def __init__(self, size: int):
         self.queue = [0 for _ in range(size)]
-        self.head = 0
         self.tail = 0
         self.curlen = 0
         self.size = size
