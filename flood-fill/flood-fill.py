@@ -4,11 +4,11 @@ class Solution:
         stack = [(sr, sc)]
         directions = ((1, 0), (0, 1), (-1, 0), (0, -1))
         orig_color = grid[sr][sc]
+        
         if orig_color == color:
             return grid
         
         while stack: 
-            print(stack)
             sr, sc = stack.pop()
             grid[sr][sc] = color
             for i, j in directions:
