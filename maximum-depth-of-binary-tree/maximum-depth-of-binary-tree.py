@@ -7,14 +7,24 @@
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
 
-        def dfs(node, depth):
-            if node is None:
-                return depth
-            
-            lv = dfs(node.left, depth + 1)
-            rv = dfs(node.right, depth + 1)
-            depth = max(lv, rv)
-            
-            return depth
+        if root is None:
+            return  0
         
-        return dfs(root, 0)
+        levels = []
+        queue = deque([root])
+        depth = 0
+        
+        while queue:
+            levels.append([])
+            
+            for i in range(len(queue)):
+                node = queue.popleft()
+                
+                levels[depth].append(node.val)
+                
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            depth += 1
+        return depth
