@@ -17,9 +17,8 @@ class Solution:
         
         while stack:
             prev = None
-            N = len(stack)
             
-            for i in range(N):
+            for i in range(len(stack)):
                 node = stack.popleft() 
                 if prev:
                     prev.next = node
