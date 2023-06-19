@@ -1,9 +1,10 @@
 class Solution:
     def getRow(self, rowIndex: int) -> List[int]:
-        pascal = [[1] * i for i in range(1, rowIndex + 2)]
         
-        for i in range(rowIndex + 1): 
-            for j in range(1, i):
-                pascal[i][j] = pascal[i - 1][j - 1] + pascal[i - 1][j]
+        ans = [[1] * (n) for n in range(1, rowIndex + 2)]
+        print(ans)
+        for i in range(2, len(ans)): 
+            for j in range(1, len(ans[i]) - 1):  
+                ans[i][j] = ans[i - 1][j - 1] + ans[i - 1][j]
         
-        return pascal[-1]
+        return ans[-1]
