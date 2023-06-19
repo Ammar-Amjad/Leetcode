@@ -11,5 +11,10 @@ class Solution:
         
         if root.val == val:
             return root
-        
-        return self.searchBST(root.left, val) or self.searchBST(root.right, val)
+        A = self.searchBST(root.left, val) 
+        B = self.searchBST(root.right, val)
+        if A:
+            return A
+        if B:
+            return B
+        return None
