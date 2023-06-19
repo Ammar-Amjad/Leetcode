@@ -1,10 +1,9 @@
 class Solution:
     def __init__(self):
-        self.cache = {}
+        self.cache = {0: 0, 1: 1}
         
     def fib(self, n: int) -> int:
-        if n == 0 or n == 1:
-            return n
+        
         if n not in self.cache:
             self.cache[n] = self.fib(n - 1) + self.fib(n - 2)
         
