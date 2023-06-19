@@ -1,14 +1,10 @@
 class Solution:
     def __init__(self):
-        self.dp = {}
+        self.dp = {0: 1, 1: 1}
     
     def climbStairs(self, n: int) -> int:    
         
-        if n < 0:
-            return 0
-        if n == 0:
-            return 1
-        if n not in self.dp:
-            self.dp[n] = self.climbStairs(n - 2) + self.climbStairs(n - 1)
         
+        for i in range(2, n + 1):
+            self.dp[i] = self.dp[i - 1] + self.dp[i - 2]
         return self.dp[n]
