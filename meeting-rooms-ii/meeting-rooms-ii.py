@@ -11,5 +11,7 @@ class Solution:
                 heapq.heappush(heap, intervals[i][1])
             else:
                 heapq.heappush(heap, intervals[i][1])
-        print(heap[0])
+                
         return len(heap)
+        # O(N logN)
+        # O(N)
