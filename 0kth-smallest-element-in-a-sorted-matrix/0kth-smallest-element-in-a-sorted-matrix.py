@@ -7,8 +7,10 @@ class Solution:
         for i in range(rLen):
             for j in range(cLen):
                 heapq.heappush(heap, -1 * matrix[i][j]) 
-                
-        res = 0
-        for i in range((rLen * cLen) - k + 1):
-            res = heapq.heappop(heap)
-        return res * -1
+                if len(heap) > k:
+                    heapq.heappop(heap)
+                    
+        return heapq.heappop(heap) * -1
+        
+        # O(NlogK)
+        # O(K)
