@@ -11,12 +11,15 @@ class Solution:
             if len(heap) < k:
                 heapq.heappush(heap, (new_dist, points[i][0], points[i][1]))                
             elif heap[0][0] < new_dist:
-                
                 heapq.heappop(heap)
                 heapq.heappush(heap, (new_dist, points[i][0], points[i][1]))
+            if len(heap) > k:
+                heapq.heappop(heap) 
         res = []
-        for i in range(k):
+        while heap:
             new_dist, x, y = heapq.heappop(heap)
             res.append((x, y))
             
         return res
+        # O(N log N)
+        # O(N)
