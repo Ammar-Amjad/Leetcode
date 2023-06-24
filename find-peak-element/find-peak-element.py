@@ -11,13 +11,13 @@ class Solution:
                 if nums[M] > nums[M + 1]:
                     return M
                 else:
-                    return M + 1
+                    L = M + 1
                 
             elif M == len(nums) - 1:
                 if nums[M - 1] < nums[M]:
                     return M
                 else:
-                    return M - 1
+                    R = M - 1
                 
             else:
                 if nums[M - 1] < nums[M] > nums[M + 1]:
