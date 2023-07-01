@@ -5,22 +5,12 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-        if root is None:
-            root = TreeNode(val)
-            return root
+    def insertIntoBST(self, node: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         
-        res = root
-        while root:
-            if val < root.val: 
-                if root.left is None:
-                    root.left = TreeNode(val)
-                    break
-                root = root.left
-                
-            elif val > root.val:
-                if root.right is None:
-                    root.right = TreeNode(val)
-                    break
-                root = root.right
-        return res
+        if not node :
+            return TreeNode(val)
+        if val < node.val:
+            node.left = self.insertIntoBST(node.left, val)
+        elif val > node.val:
+            node.right = self.insertIntoBST(node.right, val)
+        return node
