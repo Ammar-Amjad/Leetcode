@@ -28,7 +28,7 @@ class Trie:
             if node.eow == True:
                 return res
                 
-        return res
+        return word
         
         
 class Solution:
