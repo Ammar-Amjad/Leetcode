@@ -18,17 +18,19 @@ class Trie:
         
     def startsWith(self, word):
         node = self.root
-        res = ''
+        prefix = ''
         
-        for c in word:  
-            if c not in node.children: 
+        for char in word:  
+            if char not in node.children: 
+                # If a character isn't in the Trie, return the original word
                 return word
-            node = node.children[c] 
-            if node.eow == True:
-                return res + c
-            else:
-                res += c
-        return res
+            node = node.children[char] 
+            prefix += char
+            if node.eow:
+                # If this is the end of a dictionary word, return the prefix found so far
+                return prefix
+        # If no shorter replacement was found, return the original word
+        return word
         
         
 class Solution:
