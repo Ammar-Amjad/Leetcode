@@ -11,18 +11,15 @@ class Solution:
         if root is None:
             return []
         
-        stack = [(root, 0)] 
-        level = []
+        self.res = []
         
-        while stack:
-            node, idx = stack.pop()
-            for n in node.children[::-1]:
-                stack.append((n, idx + 1))
-            
-            if len(level) <= idx:
-                level.append([node.val])
-            else:
-                level[idx] += [node.val]
-                
-        return level            
+        def dfs(node, level):
+            if len(self.res) == level:
+                self.res.append([])
+            self.res[level].append(node.val)
+            for c in node.children:
+                dfs(c, level + 1)
+        
+        dfs(root, 0)
+        return self.res
             
