@@ -11,14 +11,12 @@ class Solution:
         if root is None:
             return []
         
-        self.res = []
-        def dfs(node):
-            self.res.append(node.val)
-            
-            for n in node.children:
-                dfs(n)
+        stack = [root]
+        res = []
         
-            return False
+        while stack:
+            node = stack.pop()
+            res.append(node.val)
+            stack += node.children[::-1]
         
-        dfs(root)
-        return self.res
+        return res
