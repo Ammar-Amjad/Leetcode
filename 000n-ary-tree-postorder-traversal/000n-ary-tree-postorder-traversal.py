@@ -16,7 +16,7 @@ class Solution:
         
         while stack:
             node = stack.pop()
-            if node is not Node:
+            if node is not None:
                 res.append(node.val)
             for c in node.children:
                 stack.append(c)
