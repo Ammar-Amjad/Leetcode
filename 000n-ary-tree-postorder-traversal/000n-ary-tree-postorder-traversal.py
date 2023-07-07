@@ -17,10 +17,8 @@ class Solution:
             
             for n in node.children:
                 dfs(n)
-                self.res.append(n.val)
-            return False
+            self.res.append(node.val) 
         
         dfs(root)
-        self.res.append(root.val)
         return self.res
         
