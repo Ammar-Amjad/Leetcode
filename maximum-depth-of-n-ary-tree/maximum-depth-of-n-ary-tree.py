@@ -11,11 +11,9 @@ class Solution:
         if root is None:
             return 0
         def dfs(node, depth):
-            level = []
+            level = [depth]
             for c in node.children:
                 level.append(dfs(c, depth + 1))
-            if not node.children:
-                return depth
             return max(level)
             
         
