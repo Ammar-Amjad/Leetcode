@@ -3,7 +3,7 @@ class Solution:
         if len(nums) <= 1:
             return nums
         
-        Mid = int(len(nums) / 2) 
+        Mid = len(nums) // 2 
         
         left_list = self.sortArray(nums[:Mid])
         right_list = self.sortArray(nums[Mid:])
