@@ -19,8 +19,8 @@ class Solution:
             else:
                 res.append(right_list[rp])
         
-        res.extends(left_list[lp:])
-        res.extends(right_list[rp:])
+        res.append(left_list[lp:])
+        res.append(right_list[rp:])
         
         return res
         
