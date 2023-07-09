@@ -10,21 +10,24 @@ class Solution:
         :type root: TreeNode
         :rtype: List[List[int]]
         """
+        if root is None:
+            return []
+
+        queue = deque([root])
         levels = []
+        level = 0
 
-        def dfs(node, level):
-            if not node:
-                return
-            if len(levels) == level:
-                levels.append([])
+        while queue:
+            levels.append([])
+            for i in range(len(queue)):
+                node = queue.popleft()
+                levels[level].append(node.val)
 
-            levels[level].append(node.val)
-
-            if node.left:
-                dfs(node.left, level + 1)
-            if node.right:
-                dfs(node.right, level + 1)
-
-
-        dfs(root, 0)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            
+            level += 1
         return levels
+            
