@@ -1,14 +1,15 @@
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         
-        dp = {}
+        self.dp = {len(cost): 0, len(cost) - 1: cost[len(cost) - 1]}
         
         def dfs(i):
-            if i <= 1:
-                return cost[i] 
-            if i not in dp:
-                dp[i] = cost[i] + min(dfs(i - 1), dfs(i - 2))
-            return dp[i]
-        n = len(cost) 
-        cost.append(0)
-        return dfs(n)
+            if i in self.dp:
+                return self.dp[i]
+            self.dp[i] = min(dfs(i + 1), dfs(i + 2)) + cost[i]
+            
+            return self.dp[i]
+        dfs(0)
+        
+        return min(self.dp[0], self.dp[1]) 
+        
