@@ -1,7 +1,6 @@
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
-        
-        dp = [-1 for _ in range(len(cost) + 1)]
+         
         
         two_ahead = 0
         one_ahead = cost[len(cost) - 1] 
