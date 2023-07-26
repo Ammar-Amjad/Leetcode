@@ -5,10 +5,10 @@ class Solution:
             if target == 0:
                 return 1
             
-            Sum = 0
+            Count = 0
             for j in range(i, len(coins)):
                 if target - coins[j] >= 0:
-                    Sum += dfs(j, target - coins[j])
-            return Sum
+                    Count += dfs(j, target - coins[j])
+            return Count
         
         return dfs(0, amount)
