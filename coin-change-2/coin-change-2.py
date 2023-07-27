@@ -1,18 +1,18 @@
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
-        dp = {}
         
-        def dfs(i, target):
-            if (i, target) in dp:
-                return dp[(i, target)]
-            if target == 0:
-                return 1
-            
-            dp[(i, target)] = 0
-            for j in range(i, len(coins)):
-                if target - coins[j] >= 0:
-                    dp[(i, target)] += dfs(j, target - coins[j])
-             
-            return dp[(i, target)]
+        dp = [[0 for i in range(amount + 1)] for _ in range(len(coins))]
         
-        return dfs(0, amount)
+        for row in range(len(coins) - 1, -1, -1):
+            for col in range(amount + 1):
+                if col == 0:
+                    dp[row][col] = 1
+                else:    
+                    if col - coins[row] >= 0:
+                        dp[row][col] += dp[row][col - coins[row]]
+
+                    if row + 1 < len(coins):
+                        dp[row][col] += dp[row + 1][col]
+                        
+        return dp[0][amount]
+                    
