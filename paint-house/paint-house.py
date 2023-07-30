@@ -1,13 +1,15 @@
 class Solution:
     def minCost(self, costs: List[List[int]]) -> int:
-
+        rows = len(costs)
+        cols = len(costs[0])
+        
         @cache
         def dfs(i, c):
-            if i == len(costs) - 1:
+            if i == rows - 1:
                 return costs[i][c]
             
             colorsList = [float('inf')]
-            for color in range(len(costs[0])):
+            for color in range(cols):
                 if color != c:
                     colorsList += [dfs(i + 1, color)]
             
@@ -15,7 +17,7 @@ class Solution:
             
         
         total = [float('inf')]
-        for c in range(len(costs[0])):
+        for c in range(cols):
             total += [dfs(0, c)]
             
         return min(total)
