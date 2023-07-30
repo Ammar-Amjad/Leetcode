@@ -1,23 +1,21 @@
 class Solution:
-    def minCostII(self, costs: List[List[int]]) -> int:
-        rows = len(costs)
-        cols = len(costs[0])
+    def minCostII(self, mat: List[List[int]]) -> int:
+        rows = len(mat)
+        cols = len(mat[0])
         
-        @cache
-        def dfs(i, c):
-            if i == rows - 1:
-                return costs[i][c]
-            
-            colorsList = [float('inf')]
-            for color in range(cols):
-                if color != c:
-                    colorsList += [dfs(i + 1, color)]
-            
-            return costs[i][c] + min(colorsList)            
-            
+        dp = [[0 for i in range(cols)] for j in range(rows)]
+        dp[0] = mat[0]
         
-        total = [float('inf')]
-        for c in range(cols):
-            total += [dfs(0, c)]
+        for i in range(1, rows):
+            for j in range(cols):
+                if j == 0:
+                    dp[i][j] = mat[i][j] + min(dp[i - 1][j + 1:]) 
+                    
+                elif j == cols - 1:
+                    dp[i][j] = mat[i][j] + min(dp[i - 1][:j])
+                
+                else:
+                    dp[i][j] = mat[i][j] + min(dp[i - 1][:j] + dp[i - 1][j + 1:])
             
-        return min(total)
+        return min(dp[rows - 1])
+                
