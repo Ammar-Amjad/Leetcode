@@ -40,7 +40,6 @@ class Solution:
                 if isConnected[i][j] == 1 and UF.find(i) != UF.find(j):
                     No -= 1
                     UF.union(i, j)
-        
         return No
         
     
