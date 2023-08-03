@@ -1,32 +1,27 @@
-class UnionFind:
-    def __init__(self, size):
-        self.root = [i for i in range(size)]
-        self.rank = [1 for i in range(size)]
-    
-    def find(self, X):
-        if X == self.root[X]:
-            return X
-        self.root[X] = self.find(self.root[X])
-        return self.root[X]
-    
-    def union(self, X, Y):
-        rootX = self.find(X)
-        rootY = self.find(Y)
-        if rootX != rootY:
-            if self.rank[rootX] < self.rank[rootY]:
-                self.root[rootX] = rootY
-            elif self.rank[rootY] < self.rank[rootX]:
-                self.root[rootY] = rootX
-            else:
-                self.root[rootY] = rootX
-                self.rank[rootX] += 1
-        
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], src: int, dest: int) -> bool:
+        if edges == []:
+            return True
         
-            UF = UnionFind(n)
+        graph = defaultdict(list)
+        
+        for e1, e2 in edges:
+            graph[e1].append(e2)
+            graph[e2].append(e1)
             
-            for e1, e2 in edges:
-                UF.union(e1, e2)
-                
-            return UF.find(src) == UF.find(dest)
+        visited = [False for i in range(n)]
+        
+        stack = [src]
+        
+        while stack:
+            curr = stack.pop()
+            
+            if curr == dest:
+                return True
+            
+            for nei in graph[curr]:
+                if not visited[nei]:
+                    stack.append(nei)
+            visited[curr] = True        
+            
+        return False
