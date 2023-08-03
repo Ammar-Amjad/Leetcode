@@ -22,6 +22,6 @@ class Solution:
             for nei in graph[curr]:
                 if not visited[nei]:
                     stack.append(nei)
-                    visited[nei] = True        
+            visited[curr] = True        
             
         return False
