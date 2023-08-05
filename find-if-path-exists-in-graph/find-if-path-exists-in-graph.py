@@ -1,5 +1,5 @@
 class Solution:
-    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+    def validPath(self, n: int, edges: List[List[int]], src: int, dst: int) -> bool:
         
         adj_list = defaultdict(list)
         
@@ -7,21 +7,22 @@ class Solution:
             adj_list[e1].append(e2)
             adj_list[e2].append(e1)
             
-        seen = set()
-        stack = [source]
+        queue = deque([])
+        queue.append(src)
         
-        while stack:
-            curr = stack.pop()
-            
-            if curr == destination:
+        visited = set()
+        
+        while queue:
+            curr = queue.popleft() 
+            if curr == dst:
                 return True
             
-            if curr in seen:
+            if curr in visited:
                 continue
-                
-            seen.add(curr)
             
             for nei in adj_list[curr]:
-                stack.append(nei)
+                if nei not in visited:
+                    visited.add(curr)
+                    queue.append(nei)
                 
         return False
