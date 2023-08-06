@@ -13,20 +13,24 @@ class Solution:
         if root is None:
             return root
         
-        stack = deque([root])  
+        queue = deque([root])
         
-        while stack:
-            prev = None
+        while queue:
+            size = len(queue)
             
-            for i in range(len(stack)):
-                node = stack.popleft() 
-                if prev:
-                    prev.next = node
-                prev = node
-                if node.left:
-                    stack.append(node.left)
-                if node.right:
-                    stack.append(node.right)
+            for i in range(size):
+                curr = queue.popleft()
                 
+                if i < size - 1:
+                    curr.next = queue[0]
+                    
+                if curr.left:
+                    queue.append(curr.left)
+                
+                if curr.right:
+                    queue.append(curr.right)
+                    
         return root
+            
+            
             
