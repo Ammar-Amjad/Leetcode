@@ -8,18 +8,21 @@ class Node:
 
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
+        
         if root is None:
-            return []
+            return root
         
-        self.res = []
+        queue = deque([(root, 0)])
+        levels = []
         
-        def dfs(node, level):
-            if len(self.res) == level:
-                self.res.append([])
-            self.res[level].append(node.val)
-            for c in node.children:
-                dfs(c, level + 1)
-        
-        dfs(root, 0)
-        return self.res
+        while queue:
+            curr, level = queue.popleft()
+            if level == len(levels):
+                levels.append([])
+                
+            levels[level].append(curr.val)
             
+            for c in curr.children:
+                queue.append((c, level + 1))
+                 
+        return levels
