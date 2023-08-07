@@ -10,7 +10,7 @@ class Node:
 
 class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
-        if root is None:
+        if not root:
             return root
         
         queue = deque([root])
@@ -23,14 +23,11 @@ class Solution:
                 
                 if i < size - 1:
                     curr.next = queue[0]
-                    
+
                 if curr.left:
                     queue.append(curr.left)
-                
                 if curr.right:
                     queue.append(curr.right)
-                    
+        
         return root
-            
-            
             
