@@ -4,18 +4,15 @@ class Solution:
         prev[src] = 0
         
         for i in range(k + 1):
-            tempP = prev[:]
-            
-            for u, v, cost in flights:
-                if prev[u] == float('inf'):
+            curr = prev[:]
+            for e1, e2, cost in flights:
+                if prev[e1] == float('inf'):
                     continue
-                
-                if prev[u] + cost < tempP[v]:
-                    tempP[v] = prev[u] + cost
-                
-            prev = tempP
-            
+                    
+                if prev[e1] + cost < curr[e2]:
+                    curr[e2] = prev[e1] + cost
+            prev = curr
+        
         return prev[dst] if prev[dst] != float('inf') else -1
-        
-        
-        
+                    
+            
