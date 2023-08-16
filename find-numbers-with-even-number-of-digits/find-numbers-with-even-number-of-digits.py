@@ -3,11 +3,7 @@ class Solution:
         evenc = 0
         
         for n in nums: 
-            c = 0
-            
-            while n:
-                n = n // 10
-                c += 1
+            c = math.floor(math.log10(n)) + 1
             
             if c % 2 == 0:
                 evenc += 1
