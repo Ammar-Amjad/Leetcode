@@ -1,11 +1,9 @@
 class Solution:
     def findNumbers(self, nums: List[int]) -> int:
-        evenc = 0
-        
+        count = 0
         for n in nums: 
-            c = math.floor(math.log10(n)) + 1
+            if (floor(math.log10(n)) + 1) % 2 == 0:
+                count += 1
+                
+        return count
             
-            if c % 2 == 0:
-                evenc += 1
-        
-        return evenc
